@@ -37,3 +37,6 @@ function fixExamData (student: Student<NumberOrString>) {
 	return fix(examAns)
 }
 
+function testGit (greeting: string = 'hello') {
+	console.log(greeting)
+}
