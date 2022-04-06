@@ -37,6 +37,8 @@ function fixExamData (student: Student<NumberOrString>) {
 	return fix(examAns)
 }
 
-function testGit (greeting: string = 'hello') {
-	console.log(greeting)
+function callSpreadsheet (id: string) {
+	const callId = () => '1Z_6B89U_pZCX54F0SP2AczCyiNBErl1p7Wx8k_nVXOc'
+	const ss = SpreadsheetApp.openById(id)
+	return (sheetName: string = callId()) => ss.getSheetByName(sheetName)
 }
