@@ -37,8 +37,28 @@ function fixExamData (student: Student<NumberOrString>) {
 	return fix(examAns)
 }
 
-function callSpreadsheet (id: string) {
+function callSpreadsheet (id?: string) {
 	const callId = () => '1Z_6B89U_pZCX54F0SP2AczCyiNBErl1p7Wx8k_nVXOc'
-	const ss = SpreadsheetApp.openById(id)
-	return (sheetName: string = callId()) => ss.getSheetByName(sheetName)
+	const ss = SpreadsheetApp.openById(id ? id : callId())
+	return (sheetName: string) => ss.getSheetByName(sheetName)
+}
+
+
+function moveStudentData(user: Student<NumberOrString>) {
+	const getSheetByName = callSpreadsheet()
+	const copyStudent = (from: string, to: string) => {
+
+	}
+	const checkStudent = (from: string, to: string) => {
+
+	}
+	const deleteStudent = (from: string) => {
+
+	}
+	
+	return (from: string, to: string): void => {
+		copyStudent (from, to)
+		checkStudent (from, to)
+		deleteStudent (from)
+	}
 }
