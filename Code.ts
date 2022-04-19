@@ -54,14 +54,16 @@ function moveStudentData(user: Student<NumberOrString>) {
 			}
 		}
 	}
-
-	const copyStudent = (from: string, to: string) => {
+	interface StudentAction <T> {
+		(arg1: T, arg2?: T): void
+	}
+	const copyStudent: StudentAction<string> = (from, to) => {
 
 	}
-	const checkStudent = (from: string, to: string) => {
+	const checkStudent: StudentAction<string> = (from, to) => {
 
 	}
-	const deleteStudent = (from: string) => {
+	const deleteStudent: StudentAction<string> = (from) => {
 
 	}
 	
